@@ -1,0 +1,4 @@
+.vagrant
+workspace/*
+tmp
+*.lock
