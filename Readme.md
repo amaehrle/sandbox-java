@@ -1,7 +1,7 @@
 vagrant-java-sandbox
 ================
 
-Basic Vagrant box set for Java development with Jdk and Maven using chef
+Basic Vagrant box, with Java for development with Jdk and Maven
 
 # Things needed
 
