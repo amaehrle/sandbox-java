@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-VAGRANTFILE_API_VERSION = "2"
+VAGRANTFILE_API_VERSION = '2'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'ubuntu/trusty64'
@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |vb|
     # vb.gui = true
-    vbox.name = "java-dev-box"
+    vb.name = 'java-dev-box'
     vb.memory = '2048'
     vb.cpus = '2'
   end
@@ -21,13 +21,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'chef_solo' do |chef|
     # chef.log_level = :debug
     chef.cookbooks_path = ['chef/cookbooks', 'chef/site-cookbooks']
-    # chef.roles_path = ['chef/roles']
-    # chef.add_role('base')
+    chef.roles_path = ['chef/roles']
     chef.run_list = [
       # 'recipe[apt]',
       # 'recipe[preinstall]',
       # 'recipe[build-essential]',
-       'recipe[java]'
+      'role[base]'
+       # 'recipe[java]'
       # 'recipe[maven]',
       # 'recipe[git]',
       # 'recipe[firefox]',
