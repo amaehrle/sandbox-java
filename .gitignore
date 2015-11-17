@@ -1,5 +1,4 @@
 .vagrant
 workspace/*
 tmp
-*.lock
 .DS_Store

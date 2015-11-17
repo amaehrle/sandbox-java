@@ -1,13 +1,16 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure(2) do |config|
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'ubuntu/trusty64'
 
   config.vm.synced_folder './workspace', '/home/vagrant/workspace'
 
   config.vm.provider "virtualbox" do |vb|
     # vb.gui = true
+    vbox.name = "java-dev-box"
     vb.memory = '2048'
     vb.cpus = '2'
   end
@@ -22,13 +25,13 @@ Vagrant.configure(2) do |config|
     # chef.add_role('base')
     chef.run_list = [
       # 'recipe[apt]',
-      'recipe[preinstall]',
+      # 'recipe[preinstall]',
       # 'recipe[build-essential]',
-      # 'recipe[java]',
+       'recipe[java]'
       # 'recipe[maven]',
-      'recipe[git]',
-      'recipe[firefox]',
-      'recipe[idea]'
+      # 'recipe[git]',
+      # 'recipe[firefox]',
+      # 'recipe[idea]'
       # 'recipe[xfce4]'
     ]
   end
