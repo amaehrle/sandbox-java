@@ -18,10 +18,18 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'chef_solo' do |chef|
     # chef.log_level = :debug
     chef.cookbooks_path = ['chef/cookbooks', 'chef/site-cookbooks']
+    # chef.roles_path = ['chef/roles']
+    # chef.add_role('base')
     chef.run_list = [
-      'recipe[apt]',
+      # 'recipe[apt]',
       'recipe[preinstall]',
-      'recipe[git]'
+      # 'recipe[build-essential]',
+      # 'recipe[java]',
+      # 'recipe[maven]',
+      'recipe[git]',
+      'recipe[firefox]',
+      'recipe[idea]'
+      # 'recipe[xfce4]'
     ]
   end
 end
