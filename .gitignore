@@ -2,3 +2,4 @@
 workspace/*
 tmp
 *.lock
+.DS_Store
